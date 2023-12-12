@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <style>
+
+body {
+      margin: 0;
+      padding: 0;
+      background-color: #000; /* Black background for the entire screen */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Set height to occupy the viewport height */
+    }
+
+    .container {
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+      transition: all 1s ease;
+      padding: 54px; 
+      padding-top: 30px;
+      padding-bottom: 50px;
+      width: 400px;
+      background: linear-gradient(#212121, #212121) padding-box,
+              linear-gradient(135deg, transparent 35%,#e81cff, #40c9ff) border-box;
+      border: 2px solid transparent;
+      padding: 32px 24px;
+      font-size: 14px;
+      font-family: inherit;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-sizing: border-box;
+      border-radius: 16px;
+    }
+
+    h1 {
+      color: white;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px; /* Adjust spacing between h1 and inputs */
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+
+
+    input {
+      width: 245px;
+      min-height: 45px;
+      color: #fff;
+      outline: none;
+      transition: 0.35s;
+      padding: 0px 7px;
+      background-color: #212121;
+      border-radius: 6px;
+      border: 2px solid #212121;
+      box-shadow: 6px 6px 10px rgba(0,0,0,1),
+      1px 1px 10px rgba(255, 255, 255, 0.6);
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    input:focus.input::placeholder {
+      transition: 0.3s;
+      opacity: 0;
+    }
+
+    input:focus {
+      transform: scale(1.05);
+      box-shadow: 6px 6px 10px rgba(0,0,0,1),
+      1px 1px 10px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 10px rgba(0,0,0,1),
+      inset -1px -1px 5px rgba(255, 255, 255, 0.6);
+    }
+
+    .btn {
+      padding: 10px 35px;
+      cursor: pointer;
+      background-color: #212121;
+      border-radius: 6px;
+      border: 2px solid #212121;
+      box-shadow: 6px 6px 10px rgba(0,0,0,1),
+      1px 1px 10px rgba(255, 255, 255, 0.6);
+      color: #fff;
+      font-size: 15px;
+      font-weight: bold;
+      transition: 0.35s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 6px 6px 10px rgba(0,0,0,1),
+      1px 1px 10px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 10px rgba(0,0,0,1),
+      inset -1px -1px 5px rgba(255, 255, 255, 0.6);
+    }
+
+    a.signup-link {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.signup-link:hover {
+      text-decoration: underline;
+    }
+    p {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      color: white; margin-bottom: 10px;
+    }
+
+ 
+    .success-message{
+     color: #40c9ff;
+    }
+
+    .error-message {
+     color: red;
+    }
+
+
+
+  </style>
+</head>
+<body>
+ 
+  
+  <div class="container"></div>
+<form action="/signup" method="post">
+  <h1>Sign Up</h1>
+  <br>
+   
+  <input type="email" class="input" name="email" placeholder="Email" required><br>
+  
+  <input type="password" class="input" name="password" placeholder="Password" required><br>
+  
+  <button class="btn" type="submit">Sign Up</button>
+  <p>Already have an account? <a class="signup-link" href="/signin">Signin</a></p>
+
+
+  <% if (messages && messages.success) { %>
+    <div class="success-message">
+      <p><%= messages.success %></p>
+    </div>
+  <% } else if (messages && messages.error1) { %>
+    <div class="error-message">
+      <p><%= messages.error1 %></p>
+    </div>
+    <% } else if (messages && messages.error2) { %>
+      <div class="error-message">
+        <p><%= messages.error2 %></p>
+      </div>
+      <% } else if (messages && messages.error3) { %>
+        <div class="error-message">
+          <p><%= messages.error3 %></p>
+        </div>
+        <% } else if (messages && messages.error4) { %>
+          <div class="error-message">
+            <p><%= messages.error4 %></p>
+            <% } else if (messages && messages.error5) { %>
+              <div class="error-message">
+                <p><%= messages.error5 %></p>
+                <% } else if (messages && messages.error6) { %>
+                  <div class="error-message">
+                    <p><%= messages.error6 %></p>
+          </div>
+          
+
+     
+  <% } %>
+
+
+
+</form>
+</div>
+ 
+</body>
+</html>
